@@ -13,50 +13,80 @@
     box-sizing: border-box;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 /* top bar */
-h2 {
+nav > h2 {
     background-color: var(--nav-color);
     flex: 1;
     padding: 20px;
 }
+
+#expenses {
+    display: flex;
+    flex-direction: row;
+    & #add-calc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
 /* flexbox */
 .needs-tab, .wants-tab, .savings-tab {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 250px;
+    height: fit-content;
+    background: var(--background-color);
+    border-radius: 24px;
+    margin: 1rem;
 } /* not sure why the h3 are not also displayed as flex, can change layout to grid later if you want */
+
+.income-tab {
+    text-align: center;
+    border-radius: 24px;
+    border: 1px solid #000;
+    width: 250px;
+    height: fit-content;
+}
+
+.form-title {
+    text-align: center;
+    border-radius: 24px;
+    border: 1px solid #000;
+    width: 250px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
 
 /* needs section */
 .needs-tab h3 { 
-    text-align: center;
     background-color: var(--needs-color);
-    border-radius: 24px;
-    border: 1px solid #000;
-    width: 250px;
-    height: 40px;
 }
 /* wants section */
 .wants-tab h3 { 
-    text-align: center;
+
     background-color: var(--wants-color);
-    border-radius: 24px;
-    border: 1px solid #000;
-    width: 250px;
-    height: 40px;
 }
 /* savings section */
 .savings-tab h3 { 
-    text-align: center;
     background-color: var(--savings-color);
-    border-radius: 24px;
-    border: 1px solid #000;
-    width: 250px;
-    height: 40px;
 }
 /* expenses section */
 .expenses-section {
-    width: 250px;
-    height: 450px;
-    background: var(--background-color);
-    border-radius: 24px;
+    height: fit-content;
+    padding: 0 1rem 0 1rem;
+    & form {
+        padding-left: 1rem;
+    }
+    & input {
+        padding-right: 1rem;
+    }
 }
 .add-new {
     width: 414px;
